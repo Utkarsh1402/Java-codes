@@ -1,0 +1,21 @@
+//package recursion;
+//input: xxyy
+//output: x*xy*y
+public class Reapeation {
+	public static String Repeat(String s, int prev, int i) {
+		String str="";
+		if((s.length())==i)return str+s.substring(prev,i);
+		if(s.charAt(i)==s.charAt(i-1)) {
+			
+			return str + s.substring(prev, i)+"*"+ Repeat(s,i,++i);
+		}
+		return Repeat(s,prev,++i);
+//		return str;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s="xxyy";
+		System.out.print(Repeat(s,0,1));
+	}
+
+}
