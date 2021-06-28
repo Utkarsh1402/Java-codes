@@ -1,0 +1,25 @@
+
+class Solution {
+    
+    public List<String> res = new ArrayList<>();
+    
+    public void rec(String cur, int openCount, int closedCount, int total){
+        if(closedCount == total){
+            res.add(cur);
+            return;
+        }
+        
+        if(openCount < total){
+            rec(cur+"(", openCount+1, closedCount, total);
+        }
+        if(openCount > closedCount){
+            rec(cur+")", openCount, closedCount+1, total);
+        }
+        
+    }
+    
+    public List<String> generateParenthesis(int n) {
+        rec("", 0, 0, n);
+        return res;
+    }
+}
