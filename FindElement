@@ -1,0 +1,21 @@
+// Array: 1000,10,90,20,2000,120
+//Search element: 190
+//Output: false
+
+
+package recursion;
+
+public class FindElement {
+	public static boolean ArraySearch(int arr[],int search,int i) {
+		if((arr.length-1)==i-1) return false;
+		if(arr[i]==search)return true;
+		return ArraySearch(arr,search,++i);
+		
+	}
+	public static void main(String[] args) {
+		int arr[]= {1000,10,90,20,2000,120};
+		System.out.println(ArraySearch(arr,190,0));
+
+	}
+
+}
